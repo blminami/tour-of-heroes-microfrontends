@@ -1,29 +1,33 @@
 {
-  "name": "tour-of-heroes",
+  "name": "dashboard-microapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/tour-of-heroes/src",
+  "sourceRoot": "apps/dashboard-microapp/src",
   "prefix": "app",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/tour-of-heroes",
-        "index": "apps/tour-of-heroes/src/index.html",
-        "main": "apps/tour-of-heroes/src/main.ts",
+        "outputPath": "dist/apps/dashboard-microapp",
+        "index": "apps/dashboard-microapp/src/index.html",
+        "main": "apps/dashboard-microapp/src/main.ts",
         "polyfills": [
           "zone.js"
         ],
-        "tsConfig": "apps/tour-of-heroes/tsconfig.app.json",
+        "tsConfig": "apps/dashboard-microapp/tsconfig.app.json",
         "assets": [
-          "apps/tour-of-heroes/src/favicon.ico",
-          "apps/tour-of-heroes/src/assets"
+          "apps/dashboard-microapp/src/favicon.ico",
+          "apps/dashboard-microapp/src/assets"
         ],
         "styles": [
-          "apps/tour-of-heroes/src/styles.css"
+          "apps/dashboard-microapp/src/styles.css"
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/tour-of-heroes/webpack.config.js"
+          "path": "apps/dashboard-microapp/webpack.config.js"
         },
         "commonChunk": false
       },
@@ -43,7 +47,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/tour-of-heroes/webpack.prod.config.js"
+            "path": "apps/dashboard-microapp/webpack.prod.config.js"
           }
         },
         "development": {
@@ -61,24 +65,37 @@
       "executor": "@nrwl/angular:webpack-dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "tour-of-heroes:build:production"
+          "browserTarget": "dashboard-microapp:build:production"
         },
         "development": {
-          "browserTarget": "tour-of-heroes:build:development"
+          "browserTarget": "dashboard-microapp:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4200,
-        "publicHost": "http://localhost:4200"
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "tour-of-heroes:build",
-        "extraWebpackConfig": "apps/tour-of-heroes/webpack.config.js"
+        "browserTarget": "dashboard-microapp:build",
+        "extraWebpackConfig": "apps/dashboard-microapp/webpack.config.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/dashboard-microapp/**/*.ts",
+          "apps/dashboard-microapp/**/*.html"
+        ]
       }
     }
-  }
+  },
+  "tags": []
 }
