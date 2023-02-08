@@ -11,7 +11,7 @@
     "watch": "nx build --watch --configuration development",
     "test": "nx test",
     "e2e": "nx e2e",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "run:all": "nx run-many --targets=serve --projects=dashboard-microapp,heroes-microapp,tour-of-heroes"
   },
   "private": true,
   "dependencies": {
