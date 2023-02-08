@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Hero } from 'apps/tour-of-heroes/src/app/hero';
-import { HeroService } from 'apps/tour-of-heroes/src/app/hero.service';
-
+import { HeroService } from 'core';
+import { Hero } from 'models';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

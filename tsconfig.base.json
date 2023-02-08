@@ -19,7 +19,10 @@
     "target": "ES2022",
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
-    "paths": {},
+    "paths": {
+      "core": ["libs/core/src/index.ts"],
+      "models": ["libs/models/src/index.ts"]
+    },
     "rootDir": "."
   },
   "angularCompilerOptions": {
