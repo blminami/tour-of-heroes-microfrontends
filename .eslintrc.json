@@ -5,7 +5,7 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": { "@typescript-eslint/no-non-null-assertion": false }
+      "rules": {}
     },
     {
       "files": ["*.ts", "*.tsx"],
