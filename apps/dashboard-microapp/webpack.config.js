@@ -1,15 +1,12 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const {
+  withModuleFederationPlugin,
+} = require('@angular-architects/module-federation/webpack');
 
 module.exports = withModuleFederationPlugin({
-
   name: 'dashboard-microapp',
-
+  filename: 'remoteEntry.js',
   exposes: {
-    './Component': './apps/dashboard-microapp/src/app/app.component.ts',
+    './Module':
+      './apps/dashboard-microapp/src/app/dashboard/dashboard.module.ts',
   },
-
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-  },
-
 });

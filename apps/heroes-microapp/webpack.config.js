@@ -1,15 +1,11 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const {
+  withModuleFederationPlugin,
+} = require('@angular-architects/module-federation/webpack');
 
 module.exports = withModuleFederationPlugin({
-
   name: 'heroes-microapp',
-
+  filename: 'remoteEntry.js',
   exposes: {
-    './Component': './apps/heroes-microapp/src/app/app.component.ts',
+    './Module': './apps/heroes-microapp/src/app/heroes/heroes.module.ts',
   },
-
-  shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-  },
-
 });
