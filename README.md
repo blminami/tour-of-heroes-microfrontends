@@ -7,7 +7,7 @@ Angular tour of heroes adapted to micro frontends as part of a NX monorepo.
 - Angular 12+
 - NX
 
-#### *How to run the project?*
+#### How to run the project?
 1. clone this repository 
 ```bash
 git clone https://github.com/blminami/tour-of-heroes-microfrontends.git
