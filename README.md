@@ -1,6 +1,9 @@
 ## Tour of Heroes micro frontends
 Angular tour of heroes adapted to micro frontends as part of a NX monorepo.
 
+Have a look at this article on the topic, where I explain all the steps to split a monolithic application into micro frontends.
+https://dev.to/blminami/getting-started-with-micro-frontends-3g79
+
 #### *Prerequisites* for Angular micro frontends:
 - NodeJs 10.13.0+
 - Webpack 5
