@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import {
-  loadRemoteEntry,
-  loadRemoteModule,
-} from '@angular-architects/module-federation';
+  WebComponentWrapper,
+  WebComponentWrapperOptions,
+} from '@angular-architects/module-federation-tools';
 
 const routes: Routes = [
   {
@@ -26,13 +27,12 @@ const routes: Routes = [
   },
   {
     path: 'messages',
-    loadComponent: () =>
-      loadRemoteModule({
-        type: 'script',
-        remoteEntry: 'http://localhost:4203/remoteEntry.js',
-        remoteName: 'messages',
-        exposedModule: './Messages',
-      }).then((m) => m.Messages),
+    component: WebComponentWrapper,
+    data: {
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
+      exposedModule: './web-components',
+      elementName: 'vue-element',
+    } as WebComponentWrapperOptions,
   },
 ];
 

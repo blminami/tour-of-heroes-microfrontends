@@ -1,28 +1,23 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const { dependencies } = require('../../../package.json');
 
 module.exports = (config, context) => {
   config.context = process.cwd();
   config.plugins.push(
     new ModuleFederationPlugin({
-      name: 'messages',
-      filename: 'remoteEntry.js',
+      name: "vue",
+      library: { type: "var", name: "vue" },
+      filename: "remoteEntry.js",
       exposes: {
-        './Messages': 'apps/messages-microapp/src/main.ts',
+        './web-components': 'apps/messages-microapp/src/bootstrap.ts',
       },
-      shared: {
-        ...dependencies,
-      },
+      shared: ["vue", "core-js"]
     }),
     new VueLoaderPlugin()
   );
-  config.optimization.runtimeChunk = false;
+  config.entry = 'apps/messages-microapp/src/main.ts';
   config.output = {
-    uniqueName: 'messages',
     publicPath: 'http://localhost:4203/',
-    filename: '[name][contenthash].js',
-    clean: true,
   };
   config.devServer.headers = { 'Access-Control-Allow-Origin': '*' };
   config.resolve.extensions = ['.vue', '.js', '.ts'];
