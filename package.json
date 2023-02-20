@@ -11,10 +11,11 @@
     "watch": "nx build --watch --configuration development",
     "test": "nx test",
     "e2e": "nx e2e",
-    "run:all": "nx run-many --targets=serve --projects=dashboard-microapp,heroes-microapp,tour-of-heroes"
+    "run:all": "nx run-many --targets=serve  --maxParallel=4 --projects=dashboard-microapp,heroes-microapp,messages-microapp,tour-of-heroes"
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation-tools": "^15.0.3",
     "@angular/animations": "~15.1.0",
     "@angular/common": "~15.1.0",
     "@angular/compiler": "~15.1.0",
@@ -24,9 +25,14 @@
     "@angular/platform-browser-dynamic": "~15.1.0",
     "@angular/router": "~15.1.0",
     "@nrwl/angular": "15.6.3",
+    "@nrwl/web": "^15.7.0",
     "angular-in-memory-web-api": "~0.15.0",
+    "core-js": "^3.28.0",
+    "html-webpack-plugin": "^5.5.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "vue": "^3.2.47",
+    "vue-loader": "^17.0.1",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -38,6 +44,7 @@
     "@angular/cli": "~15.1.0",
     "@angular/compiler-cli": "~15.1.0",
     "@angular/language-service": "~15.1.0",
+    "@nrwl/cli": "^15.6.3",
     "@nrwl/cypress": "15.6.3",
     "@nrwl/eslint-plugin-nx": "15.6.3",
     "@nrwl/jest": "15.6.3",
@@ -48,6 +55,7 @@
     "@types/node": "^16.11.35",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "@vue/compiler-sfc": "^3.2.47",
     "copyfiles": "^2.4.1",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
@@ -55,13 +63,12 @@
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jest-preset-angular": "~12.2.3",
-    "nx": "15.6.3",
     "ngx-build-plus": "^15.0.0",
+    "nx": "15.6.3",
     "prettier": "^2.6.2",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
-    "typescript": "~4.8.0",
-    "@nrwl/cli": "^15.6.3"
+    "typescript": "~4.8.0"
   },
   "nx": {
     "targets": {}
