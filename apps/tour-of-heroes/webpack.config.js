@@ -4,9 +4,7 @@ const {
 } = require('@angular-architects/module-federation/webpack');
 
 module.exports = withModuleFederationPlugin({
-  remotes: {
-    'vue': 'vue@http://localhost:4203/remoteEntry.js',
-  },
+  remotes: {},
 
   shared: {
     ...shareAll({

@@ -1,4 +1,4 @@
-<template><div>Hello World messages</div></template>
+<template><div>Hello World messages :)</div></template>
 
 <script>
 import { defineComponent } from 'vue';

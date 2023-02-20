@@ -29,9 +29,11 @@ const routes: Routes = [
     path: 'messages',
     component: WebComponentWrapper,
     data: {
+      type: 'script',
       remoteEntry: 'http://localhost:4203/remoteEntry.js',
-      exposedModule: './web-components',
-      elementName: 'vue-element',
+      exposedModule: './messages-wc',
+      remoteName: 'messages_microapp',
+      elementName: 'messages-element',
     } as WebComponentWrapperOptions,
   },
 ];

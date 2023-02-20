@@ -6,4 +6,4 @@ export class MfeVue extends HTMLElement {
     createApp(Messages).mount(this);
   }
 }
-customElements.define('vue-element', MfeVue);
+customElements.define('messages-element', MfeVue);
