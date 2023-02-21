@@ -1,7 +1,10 @@
 <h1>{{ title }}</h1>
+
 <nav>
   <a routerLink="/">Dashboard</a>
   <a routerLink="/heroes">Heroes</a>
-  <a routerLink="/messages">Messages</a>
 </nav>
+
 <router-outlet></router-outlet>
+
+<mft-wc-wrapper [options]="item"></mft-wc-wrapper>

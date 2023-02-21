@@ -6,6 +6,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InMemoryDataService } from 'core';
+import { ModuleFederationToolsModule } from '@angular-architects/module-federation-tools';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -15,6 +17,7 @@ import { InMemoryDataService } from 'core';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    ModuleFederationToolsModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

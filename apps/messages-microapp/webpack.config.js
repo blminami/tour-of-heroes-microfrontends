@@ -40,6 +40,10 @@ module.exports = (config, context) => {
       use: 'vue-loader',
     },
     {
+      test: /\.ts$/,
+      use: ['ts-loader'],
+    },
+    {
       test: /\.scss|\.css$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
     },

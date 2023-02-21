@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import {
-  WebComponentWrapper,
-  WebComponentWrapperOptions,
-} from '@angular-architects/module-federation-tools';
+// import {
+//   WebComponentWrapper,
+//   WebComponentWrapperOptions,
+// } from '@angular-architects/module-federation-tools';
 
 const routes: Routes = [
   {
@@ -25,17 +25,17 @@ const routes: Routes = [
         exposedModule: './Module',
       }).then((m) => m.HeroesModule),
   },
-  {
-    path: 'messages',
-    component: WebComponentWrapper,
-    data: {
-      type: 'script',
-      remoteEntry: 'http://localhost:4203/remoteEntry.js',
-      exposedModule: './messages-wc',
-      remoteName: 'messages_microapp',
-      elementName: 'messages-element',
-    } as WebComponentWrapperOptions,
-  },
+  // {
+  //   path: 'messages',
+  //   component: WebComponentWrapper,
+  //   data: {
+  //     type: 'script',
+  //     remoteEntry: 'http://localhost:4203/remoteEntry.js',
+  //     exposedModule: './messages-wc',
+  //     remoteName: 'messages_microapp',
+  //     elementName: 'messages-element',
+  //   } as WebComponentWrapperOptions,
+  // },
 ];
 
 @NgModule({
