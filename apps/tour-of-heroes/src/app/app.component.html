@@ -1,11 +1,11 @@
-<div class="bg-dark-bg h-screen">
+<div class="bg-dark-bg min-h-screen">
   <h1
-    class="text-4xl text-center font-normal mb-4 p-4 text-primary bg-secondary shadow-lg rounded-b-lg"
+    class="text-4xl text-center font-normal mb-4 p-8 text-primary bg-gradient-to-bl from-gray-700 via-gray-900 to-black shadow-lg"
   >
     {{ title }}
   </h1>
 
-  <ul class="flex border-b border-gray-500 text-gray-500 mb-8">
+  <ul class="flex border-b border-gray-500 text-gray-300 mb-6">
     <li class="-mb-px mr-1">
       <a
         class="inline-block py-2 px-4 font-semibold"
@@ -17,9 +17,8 @@
     </li>
     <li class="mr-1">
       <a
-        class="inline-block py-2 px-4 hover:text-white font-semibold"
+        class="inline-block py-2 px-4 font-semibold"
         routerLink="/heroes"
-        [routerLinkActiveOptions]="{ exact: true }"
         routerLinkActive="text-cordovan bg-dark-bg border-l border-gray-500 border-t border-r rounded-t"
         >Heroes</a
       >

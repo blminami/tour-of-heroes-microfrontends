@@ -1,8 +1,28 @@
-<h2>Top Heroes</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes" routerLink="/heroes/detail/{{ hero.id }}">
-    {{ hero.name }}
-  </a>
-</div>
+<div class="pl-3 pr-3">
+  <app-hero-search></app-hero-search>
 
-<app-hero-search></app-hero-search>
+  <h2 class="text-3xl text-center !mb-4 text-primary">Top Heroes</h2>
+
+  <div class="flex flex-row justify-between">
+    <div
+      *ngFor="let hero of heroes"
+      class="rounded flex shadow-lg mb-2 mr-2 bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 cursor-pointer"
+    >
+      <div class="!w-[150px] !h-[200px]">
+        <img
+          class="self-center"
+          src="https://i.postimg.cc/mDTz7Bnp/2-2-anime-png-pic.png"
+          alt="hero image"
+        />
+      </div>
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ hero.name }}</div>
+        <p class="text-test text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+          nihil.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
