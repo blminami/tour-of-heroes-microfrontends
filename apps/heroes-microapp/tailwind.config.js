@@ -8,11 +8,13 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
+    darkMode: true,
     extend: {
       colors: {
         primary: '#E4B363',
+        'primary-brighter': '#e09b28',
         secondary: '#074F57',
-        cordovan: '#764248',
+        cordovan: '#c45663',
         'dark-bg': '#242424',
       },
     },

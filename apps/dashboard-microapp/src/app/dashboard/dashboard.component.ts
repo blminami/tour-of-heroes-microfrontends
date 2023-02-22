@@ -9,6 +9,8 @@ import { Hero } from 'models';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  defaultImage =
+    'https://i.postimg.cc/d34zPbkH/124983-boy-demon-anime-picture-free-download-image.png';
 
   constructor(private heroService: HeroService) {}
 

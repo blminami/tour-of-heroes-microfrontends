@@ -1,10 +1,27 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+<div *ngIf="hero" class="bg-dark-bg pl-3 pr-3">
+  <h2 class="text-3xl !mb-4 text-primary">
+    {{ hero.name | uppercase }} Details
+  </h2>
+  <div class="mb-4">
+    <label for="hero-name" class="dark:text-white mr-3"
+      >Update hero name:
+    </label>
+    <input
+      #heroName
+      [(ngModel)]="hero.name"
+      class="shadow appearance-none border rounded w-1/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    />
   </div>
-  <button type="button" (click)="goBack()">go back</button>
-  <button type="button" (click)="save()">save</button>
+  <button
+    class="bg-white hover:bg-gray-100 text-primary-brighter font-semibold py-1 px-3 ml-1 border border-primary-brighter hover:border-transparent rounded"
+    (click)="goBack()"
+  >
+    Go back
+  </button>
+  <button
+    class="bg-white hover:bg-gray-100 text-primary-brighter font-semibold py-1 px-3 ml-1 border border-primary-brighter hover:border-transparent rounded"
+    (click)="save()"
+  >
+    Save
+  </button>
 </div>

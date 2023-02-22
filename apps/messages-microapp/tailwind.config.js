@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         primary: '#E4B363',
         secondary: '#074F57',
-        cordovan: '#764248',
+        cordovan: '#c45663',
         dark: '#242424',
       },
     },
