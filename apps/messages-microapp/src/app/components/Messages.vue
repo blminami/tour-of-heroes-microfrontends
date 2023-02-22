@@ -26,24 +26,21 @@ export default {
 </script>
 
 <template>
-  <div class="messages-container">
+  <div
+    class="m-3 p-2 bg-gradient-to-br from-rose-100 to-teal-100 rounded shadow-lg"
+  >
     <ng-container v-if="messages.length">
       API calls and messages:
       <li v-for="message in messages">
         {{ message }}
       </li>
-      <button @click="clearMessages">clear</button></ng-container
-    >
+      <button
+        class="bg-transparent hover:bg-gray-300 text-black font-semibold py-1 px-3 mt-1 border border-gray-500 hover:border-transparent rounded"
+        @click="clearMessages"
+      >
+        clear
+      </button>
+    </ng-container>
     <ng-container v-else>No messages to display </ng-container>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.messages-container {
-  margin-top: 20px;
-  background: rgb(36 34 47);
-  padding: 20px;
-  border-radius: 10px;
-  line-height: 24px;
-}
-</style>

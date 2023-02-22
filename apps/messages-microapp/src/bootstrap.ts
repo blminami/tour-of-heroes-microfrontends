@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import Messages from './app/components/Messages.vue';
+import './styles.css';
 
 export class MfeVue extends HTMLElement {
   connectedCallback() {
