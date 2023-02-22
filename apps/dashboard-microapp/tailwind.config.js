@@ -12,10 +12,8 @@ module.exports = {
       colors: {
         primary: '#E4B363',
         secondary: '#074F57',
-        'fern-green': '#568259',
-        'dark-bg': '#242424',
-        'robin-egg-blue': '#4ECDC4',
         cordovan: '#764248',
+        'dark-bg': '#242424',
       },
     },
   },
