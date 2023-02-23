@@ -17,7 +17,8 @@
         "tsConfig": "apps/messages-microapp/tsconfig.app.json",
         "assets": [
           "apps/messages-microapp/src/favicon.ico",
-          "apps/messages-microapp/src/assets"
+          "apps/messages-microapp/src/assets",
+          "apps/messages-microapp/src/netlify.toml"
         ],
         "styles": ["apps/messages-microapp/src/styles.css"],
         "scripts": [],

@@ -5,13 +5,14 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 //   WebComponentWrapper,
 //   WebComponentWrapperOptions,
 // } from '@angular-architects/module-federation-tools';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
       loadRemoteModule({
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        remoteEntry: `${environment.DASHBOARD_MICROAPP_ORIGIN}/remoteEntry.js`,
         type: 'module',
         exposedModule: './Module',
       }).then((m) => m.DashboardModule),
@@ -20,7 +21,7 @@ const routes: Routes = [
     path: 'heroes',
     loadChildren: () =>
       loadRemoteModule({
-        remoteEntry: 'http://localhost:4202/remoteEntry.js',
+        remoteEntry: `${environment.HEROES_MICROAPP_ORIGIN}/remoteEntry.js`,
         type: 'module',
         exposedModule: './Module',
       }).then((m) => m.HeroesModule),

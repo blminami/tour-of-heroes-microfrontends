@@ -1,9 +1,19 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const { dependencies } = require('../../../package.json');
+const { dependencies } = require('../../package.json');
+const path = require('path');
 
 module.exports = (config, context) => {
   config.context = process.cwd();
+  config.entry = [
+    'apps/messages-microapp/src/index.html',
+    'apps/messages-microapp/src/main.ts',
+  ];
+  config.output = {
+    publicPath: 'auto',
+    path: path.resolve(__dirname, '../../dist/apps/messages-microapp'),
+  };
+
   config.plugins.push(
     new ModuleFederationPlugin({
       name: 'messages_microapp',
@@ -18,13 +28,10 @@ module.exports = (config, context) => {
     }),
     new VueLoaderPlugin()
   );
-  config.entry = 'apps/messages-microapp/src/main.ts';
-  config.output = {
-    publicPath: 'auto',
-  };
+
   // important workaround !!!
   config.optimization.runtimeChunk = false;
-  config.devServer.headers = { 'Access-Control-Allow-Origin': '*' };
+  // config.devServer.headers = { 'Access-Control-Allow-Origin': '*' };
   config.resolve.extensions = ['.vue', '.js', '.ts'];
   config.module.rules = [
     {
@@ -38,6 +45,10 @@ module.exports = (config, context) => {
     {
       test: /\.vue$/,
       use: 'vue-loader',
+    },
+    {
+      test: /\.html/,
+      use: [{ loader: 'file-loader?name=[name].[ext]' }],
     },
     {
       test: /\.ts$/,

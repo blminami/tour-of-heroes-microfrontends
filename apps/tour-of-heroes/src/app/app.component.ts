@@ -1,5 +1,6 @@
 import { WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
 
   item: WebComponentWrapperOptions = {
     type: 'script',
-    remoteEntry: 'http://localhost:4203/remoteEntry.js',
+    remoteEntry: `${environment.MESSAGES_MICROAPP_ORIGIN}/remoteEntry.js`,
     exposedModule: './messages-wc',
     remoteName: 'messages_microapp',
     elementName: 'messages-element',
