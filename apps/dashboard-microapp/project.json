@@ -16,7 +16,8 @@
         "tsConfig": "apps/dashboard-microapp/tsconfig.app.json",
         "assets": [
           "apps/dashboard-microapp/src/favicon.ico",
-          "apps/dashboard-microapp/src/assets"
+          "apps/dashboard-microapp/src/assets",
+          "apps/dashboard-microapp/src/netlify.toml"
         ],
         "styles": ["apps/dashboard-microapp/src/styles.css"],
         "scripts": [],

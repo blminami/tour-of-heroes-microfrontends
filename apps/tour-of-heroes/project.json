@@ -10,18 +10,14 @@
         "outputPath": "dist/apps/tour-of-heroes",
         "index": "apps/tour-of-heroes/src/index.html",
         "main": "apps/tour-of-heroes/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/tour-of-heroes/tsconfig.app.json",
         "assets": [
           "apps/tour-of-heroes/src/favicon.ico",
           "apps/tour-of-heroes/src/assets",
           "apps/tour-of-heroes/src/netlify.toml"
         ],
-        "styles": [
-          "apps/tour-of-heroes/src/styles.css"
-        ],
+        "styles": ["apps/tour-of-heroes/src/styles.css"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/tour-of-heroes/webpack.config.js"
@@ -30,16 +26,10 @@
       },
       "configurations": {
         "production": {
-          "budgets": [
+          "fileReplacements": [
             {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "replace": "apps/tour-of-heroes/src/environments/environment.ts",
+              "with": "apps/tour-of-heroes/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
