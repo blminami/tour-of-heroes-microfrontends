@@ -16,7 +16,8 @@
         "tsConfig": "apps/tour-of-heroes/tsconfig.app.json",
         "assets": [
           "apps/tour-of-heroes/src/favicon.ico",
-          "apps/tour-of-heroes/src/assets"
+          "apps/tour-of-heroes/src/assets",
+          "apps/tour-of-heroes/src/netlify.toml"
         ],
         "styles": [
           "apps/tour-of-heroes/src/styles.css"

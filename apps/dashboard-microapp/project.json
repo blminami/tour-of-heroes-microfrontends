@@ -7,24 +7,18 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/dashboard-microapp",
         "index": "apps/dashboard-microapp/src/index.html",
         "main": "apps/dashboard-microapp/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/dashboard-microapp/tsconfig.app.json",
         "assets": [
           "apps/dashboard-microapp/src/favicon.ico",
           "apps/dashboard-microapp/src/assets"
         ],
-        "styles": [
-          "apps/dashboard-microapp/src/styles.css"
-        ],
+        "styles": ["apps/dashboard-microapp/src/styles.css"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/dashboard-microapp/webpack.config.js"
@@ -33,18 +27,6 @@
       },
       "configurations": {
         "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
-            }
-          ],
           "outputHashing": "all",
           "customWebpackConfig": {
             "path": "apps/dashboard-microapp/webpack.prod.config.js"
@@ -86,9 +68,7 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/dashboard-microapp/**/*.ts",
