@@ -1,5 +1,12 @@
 ## Tour of Heroes micro frontends
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/990114b0-9892-410a-b547-33740b6cb3b7/deploy-status)](https://app.netlify.com/sites/tour-of-heroes-mfe/deploys)
+
 Angular tour of heroes adapted to micro frontends as part of a NX monorepo.
+
+#### Demo
+
+[Netlify App Demo](https://tour-of-heroes-mfe.netlify.app/)
 
 Have a look at this article on the topic, where I explain all the steps to split a monolithic application into micro frontends.
 https://dev.to/blminami/getting-started-with-micro-frontends-3g79
