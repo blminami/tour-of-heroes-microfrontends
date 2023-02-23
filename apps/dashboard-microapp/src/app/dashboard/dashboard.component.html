@@ -1,8 +1,23 @@
-<h2>Top Heroes</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes" routerLink="/heroes/detail/{{ hero.id }}">
-    {{ hero.name }}
-  </a>
+<div class="pl-3 pr-3">
+  <app-hero-search></app-hero-search>
+  <h2 class="text-3xl text-center !mb-4 text-primary">Top Heroes</h2>
+  <div class="flex flex-row justify-between">
+    <div
+      *ngFor="let hero of heroes"
+      class="rounded flex shadow-lg mb-2 mr-2 bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 cursor-pointer"
+      routerLink="/heroes/detail/{{ hero.id }}"
+    >
+      <img
+        class="object-contain h-52 w-40 self-center"
+        [src]="hero.image || defaultImage"
+        alt="hero image"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ hero.name }}</div>
+        <p class="text-test text-base">
+          {{ hero.description }}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<app-hero-search></app-hero-search>

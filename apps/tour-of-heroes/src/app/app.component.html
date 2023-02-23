@@ -1,10 +1,31 @@
-<h1>{{ title }}</h1>
+<div class="bg-dark-bg min-h-screen">
+  <h1
+    class="text-4xl text-center font-normal mb-4 p-8 text-primary bg-gradient-to-bl from-gray-700 via-gray-900 to-black shadow-lg"
+  >
+    {{ title }}
+  </h1>
+  <div class="hidden w-[49%]"></div>
 
-<nav>
-  <a routerLink="/">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
+  <ul class="flex border-b border-gray-500 text-gray-300 mb-6">
+    <li class="-mb-px mr-1">
+      <a
+        class="inline-block py-2 px-4 font-semibold"
+        routerLink="/"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="text-cordovan bg-dark-bg border-l border-gray-500 border-t border-r rounded-t"
+        >Dashboard</a
+      >
+    </li>
+    <li class="mr-1">
+      <a
+        class="inline-block py-2 px-4 font-semibold"
+        routerLink="/heroes"
+        routerLinkActive="text-cordovan bg-dark-bg border-l border-gray-500 border-t border-r rounded-t"
+        >Heroes</a
+      >
+    </li>
+  </ul>
 
-<router-outlet></router-outlet>
-
-<mft-wc-wrapper [options]="item"></mft-wc-wrapper>
+  <router-outlet></router-outlet>
+  <mft-wc-wrapper [options]="item"></mft-wc-wrapper>
+</div>
