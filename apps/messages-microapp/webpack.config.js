@@ -1,6 +1,6 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const { dependencies } = require('../../../package.json');
+const { dependencies } = require('../../package.json');
 const path = require('path');
 
 module.exports = (config, context) => {
