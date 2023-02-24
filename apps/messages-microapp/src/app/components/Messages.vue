@@ -41,7 +41,8 @@ export default {
 <style lang="scss" scoped>
 .messages-container {
   margin-top: 20px;
-  background: rgb(36 34 47);
+  background: rgb(36, 34, 47);
+  color: white;
   padding: 20px;
   border-radius: 10px;
   line-height: 24px;
