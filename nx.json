@@ -11,11 +11,8 @@
     }
   },
   "namedInputs": {
-    "sharedGlobals": [],
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "sharedGlobals": ["{workspaceRoot}/babel.config.json"],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/tsconfig.spec.json",
@@ -28,32 +25,17 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "defaultProject": "tour-of-heroes",
@@ -70,6 +52,21 @@
     },
     "@nrwl/angular:component": {
       "style": "css"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "webpack",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
     }
   },
   "defaultBase": "master"

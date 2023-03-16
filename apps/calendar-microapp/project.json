@@ -1,0 +1,91 @@
+{
+  "name": "calendar-microapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/calendar-microapp/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/calendar-microapp",
+        "index": "apps/calendar-microapp/src/index.html",
+        "baseHref": "/",
+        "main": "apps/calendar-microapp/src/main.tsx",
+        "tsConfig": "apps/calendar-microapp/tsconfig.app.json",
+        "assets": [
+          "apps/calendar-microapp/src/favicon.ico",
+          "apps/calendar-microapp/src/assets"
+        ],
+        "styles": ["apps/calendar-microapp/src/styles.css"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/calendar-microapp/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/calendar-microapp/src/environments/environment.ts",
+              "with": "apps/calendar-microapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "calendar-microapp:build",
+        "hmr": true,
+        "port": 4204
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "calendar-microapp:build:development"
+        },
+        "production": {
+          "buildTarget": "calendar-microapp:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/calendar-microapp/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/calendar-microapp/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
