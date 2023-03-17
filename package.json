@@ -11,7 +11,7 @@
     "watch": "nx build --watch --configuration development",
     "test": "nx test",
     "e2e": "nx e2e",
-    "run:all": "nx run-many --targets=serve  --maxParallel=4 --projects=dashboard-microapp,heroes-microapp,messages-microapp,tour-of-heroes"
+    "run:all": "nx run-many --targets=serve  --maxParallel=5 --projects=dashboard-microapp,heroes-microapp,messages-microapp,calendar-microapp,tour-of-heroes"
   },
   "private": true,
   "dependencies": {

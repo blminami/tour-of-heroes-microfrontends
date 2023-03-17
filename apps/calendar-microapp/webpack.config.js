@@ -28,6 +28,10 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   config.resolve.extensions = ['.tsx', '.ts', '.js'];
   config.module.rules = [
     {
+      test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,
+      use: [{ loader: 'file-loader' }],
+    },
+    {
       test: /.tsx$/,
       exclude: /node_modules/,
       use: [
@@ -43,6 +47,10 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
     {
       test: /\.html/,
       use: [{ loader: 'file-loader?name=[name].[ext]' }],
+    },
+    {
+      test: /\.scss|\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
     },
   ];
 
