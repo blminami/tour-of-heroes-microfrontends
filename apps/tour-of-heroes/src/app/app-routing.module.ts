@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-// import {
-//   WebComponentWrapper,
-//   WebComponentWrapperOptions,
-// } from '@angular-architects/module-federation-tools';
+import {
+  WebComponentWrapper,
+  WebComponentWrapperOptions,
+} from '@angular-architects/module-federation-tools';
 import { environment } from '../environments/environment';
 
 const routes: Routes = [
@@ -37,6 +37,17 @@ const routes: Routes = [
   //     elementName: 'messages-element',
   //   } as WebComponentWrapperOptions,
   // },
+  {
+    path: 'calendar',
+    component: WebComponentWrapper,
+    data: {
+      type: 'script',
+      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      exposedModule: './calendar-wc',
+      remoteName: 'calendar_microapp',
+      elementName: 'calendar-element',
+    } as WebComponentWrapperOptions,
+  },
 ];
 
 @NgModule({
