@@ -42,7 +42,7 @@ const routes: Routes = [
     component: WebComponentWrapper,
     data: {
       type: 'script',
-      remoteEntry: 'http://localhost:4204/remoteEntry.js',
+      remoteEntry: `${environment.CALENDAR_MICROAPP_ORIGIN}/remoteEntry.js`,
       exposedModule: './calendar-wc',
       remoteName: 'calendar_microapp',
       elementName: 'calendar-element',
